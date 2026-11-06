@@ -770,6 +770,193 @@ section {
     line-height: 1.75;
 }
 
+/* ===== Global Certification Section ===== */
+.global-cert-section {
+    max-width: 100%;
+    background: var(--bg-primary);
+}
+
+.global-cert-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.global-cert-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-md);
+    padding: 36px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-smooth);
+}
+
+.global-cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00A1E0, var(--accent-light), #00A1E0);
+    opacity: 0.8;
+}
+
+.global-cert-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(0, 161, 224, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0, 161, 224, 0.16);
+}
+
+.global-cert-badge-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.salesforce-icon-box {
+    width: 76px;
+    height: 76px;
+    border-radius: var(--radius-md);
+    background: rgba(0, 161, 224, 0.1);
+    border: 1px solid rgba(0, 161, 224, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-smooth);
+}
+
+.global-cert-card:hover .salesforce-icon-box {
+    transform: scale(1.05);
+    background: rgba(0, 161, 224, 0.18);
+    box-shadow: 0 0 24px rgba(0, 161, 224, 0.35);
+}
+
+.cert-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #10b981;
+    animation: certPulse 2s infinite;
+}
+
+@keyframes certPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.global-cert-content {
+    flex: 1;
+}
+
+.cert-header-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.cert-issuer-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #00A1E0;
+    background: rgba(0, 161, 224, 0.1);
+    border: 1px solid rgba(0, 161, 224, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.cert-type-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.global-cert-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+}
+
+.global-cert-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 14px;
+}
+
+.cert-verify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #00A1E0, #0284c7);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 16px rgba(0, 161, 224, 0.3);
+    transition: all var(--transition-smooth);
+}
+
+.cert-verify-btn:hover {
+    background: linear-gradient(135deg, #0284c7, #38bdf8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(0, 161, 224, 0.45);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .global-cert-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+    }
+
+    .global-cert-badge-col {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .salesforce-icon-box {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 /* ===== Projects Section ===== */
 #projects {
     background: var(--bg-secondary);
